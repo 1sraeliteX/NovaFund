@@ -97,14 +97,14 @@ export default function MilestoneTimeline({ milestones }: MilestoneTimelineProps
             >
               <div className="relative z-10 flex-shrink-0">
                 <div
-                  className={`
-                    flex h-12 w-12 items-center justify-center rounded-full border-2
-                    ${milestone.status === "active" ? "animate-pulse" : ""}
-                    ${milestone.status === "completed" ? "bg-emerald-500 border-emerald-500" : ""}
-                    ${milestone.status === "active" ? `bg-amber-500 ${meta.borderColor}` : ""}
-                    ${milestone.status === "pending" ? `border-2 border-slate-500 bg-slate-900/50` : ""}
-                    ${milestone.status === "disputed" ? `bg-rose-500 ${meta.borderColor}` : ""}
-                  `}
+                  className={
+                    "flex h-12 w-12 items-center justify-center rounded-full border-2 " +
+                    (milestone.status === "active" ? "animate-pulse " : "") +
+                    (milestone.status === "completed" ? "bg-emerald-500 border-emerald-500 " : "") +
+                    (milestone.status === "active" ? "bg-amber-500 " + meta.borderColor + " " : "") +
+                    (milestone.status === "pending" ? "border-2 border-slate-500 bg-slate-900/50 " : "") +
+                    (milestone.status === "disputed" ? "bg-rose-500 " + meta.borderColor : "")
+                  }
                 >
                   <StatusIcon className={`h-5 w-5 ${meta.iconColor}`} />
                 </div>
